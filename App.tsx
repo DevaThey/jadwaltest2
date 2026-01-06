@@ -76,7 +76,7 @@ function App() {
         </div>
 
         {/* Floating Dock Navigation (Bottom for Mobile, Sticky for Desktop) */}
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-md">
+        <div className="fixed bottom-16 md:bottom-12 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-md">
           <div className="bg-[#0f172a]/80 backdrop-blur-xl border border-white/10 rounded-2xl p-2 flex justify-between items-center shadow-2xl shadow-black/50">
             {tabs.map((tab) => {
               const isActive = activeTab === tab.id;
@@ -93,11 +93,11 @@ function App() {
                   {isActive && (
                     <div className="absolute inset-0 bg-primary/20 blur-md rounded-xl"></div>
                   )}
-                  
+
                   <div className={`relative z-10 transition-transform duration-300 ${isActive ? '-translate-y-1' : ''}`}>
                     {tab.icon}
                   </div>
-                  
+
                   {isActive && (
                     <span className="absolute -bottom-1 text-[10px] font-bold tracking-wide animate-fade-in">
                       {tab.label}
